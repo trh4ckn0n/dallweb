@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Historique - Trhacknon</title>
+  <style>
+    body { background:#111; color:#0f0; font-family:sans-serif; text-align:center; }
+    img { max-width: 200px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Historique des générations</h1>
+  {% for item in history %}
+    <div>
+      <img src="/static/{{ item.image }}"><br>
+      <small>{{ item.date }}<br>
+      Prompt : {{ item.prompt }}<br>
+      Texte : {{ item.texte }}</small>
+    </div>
+  {% endfor %}
+  <br><a href="/">Retour</a>
+</body>
+</html>
