@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Générateur Trhacknon</title>
+  <style>
+    body { background:#111; color:#0f0; font-family:sans-serif; text-align:center; }
+    input, select, button { margin:10px; padding:5px; }
+  </style>
+</head>
+<body>
+  <h1>Générateur d'images Trhacknon</h1>
+  <form method="post">
+    <input type="text" name="prompt" placeholder="Décris ton image" required><br>
+    <input type="text" name="style" placeholder="Style (optionnel)"><br>
+    <input type="text" name="texte" placeholder="Texte sur l’image (optionnel)"><br>
+    <label>Police :</label>
+    <select name="police">
+      {% for font in fonts %}
+        <option value="{{ font }}">{{ font }}</option>
+      {% endfor %}
+    </select><br>
+    <label>Position du texte :</label>
+    <select name="position">
+      <option value="haut">Haut</option>
+      <option value="centre">Centre</option>
+      <option value="bas" selected>Bas</option>
+    </select><br>
+    <button type="submit">Générer</button>
+  </form>
+  <br>
+  <a href="/history" style="color:#0ff">Voir l’historique</a>
+</body>
+</html>
